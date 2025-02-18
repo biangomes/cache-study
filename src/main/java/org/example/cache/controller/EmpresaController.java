@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@EnableCaching
 @RestController
 @RequestMapping("/empresa")
 public class EmpresaController {
