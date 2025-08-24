@@ -3,7 +3,7 @@ package org.example.cache.controller;
 import org.example.cache.entity.Empresa;
 import org.example.cache.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +20,6 @@ public class EmpresaController {
 
     @GetMapping()
     public ResponseEntity<List<Empresa>> findAll() {
-        return ResponseEntity.ok(service.findAll());
+        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 }
